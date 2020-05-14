@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'calendar-list-page' %}" class="btn btn-danger">Back</a>
+<h2 style="margin-top: 15px">Schedule an Appointment</h2>
+<br />
+<form method="POST" style="display: 'flex'; flex-direction: 'column';">
+    <div>
+        {{ form.as_p }}
+    </div>
+    <div>
+        {% csrf_token %}
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+{% endblock content %}
